@@ -10,7 +10,6 @@ use yii\grid\GridView;
 $this->title = 'Cliventas';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-
 <div class="cliventa-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -20,7 +19,25 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('Create Cliventa', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-       <?php
-   
-    ?>
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+
+            'idCliente',
+            'cuit',
+            'dni',
+            'rs',
+            'nombre',
+            //'apellido',
+            //'domcilio',
+            //'domiclioLegal',
+            //'telefono',
+            //'email:email',
+            //'idTipoIva',
+
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
 </div>

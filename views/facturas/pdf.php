@@ -1,6 +1,7 @@
 <?php
-
 use yii\helpers\Html;
+use yii\BarcodeGenerator;
+use yii\BarcodeGeneratorPNG;
 use yii\grid\GridView;
 
 
@@ -49,6 +50,7 @@ $afip = new Afip(array('CUIT' => 23307295059));
 
 $voucher_info = $afip->ElectronicBilling->GetVoucherInfo(7,1,6); //Devuelve la información del comprobante 1 para el punto de venta 1 y el tipo de comprobante 6 (Factura B)
 //$otra="El ultimo comprobante es: ".$afip->ElectronicBilling->GetLastVoucher(1,6);//me permite obtener el ultimo numero de comprbante para el punto de venta y tiepo de comprobante.
+
 $cae;
 $fecha;
 
@@ -73,10 +75,14 @@ $cuit=$data['DocNro'];//'23307295059';
 $pv='00001'; //tomar el punta ode venta de data $data[PtoVta] y ver como agregar los digitos para que tenga siempre 5
 $tipocomprobante='006';//tomar el punta ode venta de data $data[CbteTipo] y ver como agregar los digitos para que tenga siempre 3
 $cadena= $model->codigovirificador($cuit,$tipocomprobante, $pv,$cae,$fecha);
-echo '<b>'.$cadena.'</b>';
-echo 'CAE: '.$cae;//'14345678910112';
-echo 'Fecha de Vencimiento: '.$fecha;//'20190112';
-
-
-
+$generator = new \Picqer\Barcode\BarcodeGeneratorPNG();
+ echo '<div width="50%" border="1"><img src="data:image/png;base64,' . base64_encode($generator->getBarcode($cadena, $generator::TYPE_INTERLEAVED_2_5)) . '">';
 ?>
+<p><?= $cadena?></p>
+<p><?= '</br>CAE: '.$cae?></p>
+<p><?= 'Fecha Vencimiento: '.$fecha ?></p>
+</div>
+
+
+
+

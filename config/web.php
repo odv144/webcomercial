@@ -10,6 +10,7 @@ $config = [
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
+        
     ],
     'components' => [
         'request' => [
@@ -26,6 +27,17 @@ $config = [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
+        /*
+        'view' => [
+                'theme' => [
+                    'basePath' => '@app/themes/sbclean',
+                    'baseUrl' => '@web/themes/sbclean',
+                    'pathMap' => [
+                        '@app/views' => '@app/themes/sbclean',
+                    ],
+                ],
+        ],
+*/
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             // send all mails to a file by default. You have to set

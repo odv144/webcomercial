@@ -16,8 +16,11 @@
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "~2.0.14",
-        "yiisoft/yii2-bootstrap": "~2.0.0",
-        "yiisoft/yii2-swiftmailer": "~2.0.0"
+        "yiisoft/yii2-swiftmailer": "~2.0.0",
+        "afipsdk/afip.php": "^0.5.3",
+        "kartik-v/yii2-mpdf": "dev-master",
+        "picqer/php-barcode-generator": "^0.2.2",
+        "twbs/bootstrap": "4.2.1"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",
