@@ -27,17 +27,17 @@ $config = [
         'errorHandler' => [
             'errorAction' => 'site/error',
         ],
-        /*
+        
         'view' => [
                 'theme' => [
-                    'basePath' => '@app/themes/sbclean',
-                    'baseUrl' => '@web/themes/sbclean',
-                    'pathMap' => [
-                        '@app/views' => '@app/themes/sbclean',
+                   'basePath' => '@app/themes/elegante',
+                   'baseUrl'   => '@app/themes/elegante',
+                   'pathMap' => [
+                        '@app/views' => '@webroot/themes/elegante',
                     ],
                 ],
         ],
-*/
+
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
             // send all mails to a file by default. You have to set

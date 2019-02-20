@@ -15,6 +15,7 @@ class SiteController extends Controller
     /**
      * {@inheritdoc}
      */
+    public $layout = '@app/themes/elegante/layouts/main';
     public function behaviors()
     {
         return [

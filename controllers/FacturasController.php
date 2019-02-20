@@ -22,6 +22,9 @@ class FacturasController extends Controller
     /**
      * {@inheritdoc}
      */
+    //public $layout = '@app/themes/elegante/layouts/main';
+     public $layout = '@app/themes/avanzado/layouts/main';
+    
     public function behaviors()
     {
         return [
